@@ -59,7 +59,7 @@ return random
 };
 console.log("As suas decisões podem impactar o destino dos mundos e a vida das pessoas a sua volta, então muito cuidado!!");
 console.log();
-console.log("Para não ficar confuso decidi separar a historinha a seguir utilizando o comando do enter para que, você que está jogando não fique confuso com tanta coisa aparecendo na tela.");
+console.log("Para não ficar confuso decidi separar a historinha a seguir utilizando o comando do enter, para que, você que está jogando não fique confuso com tanta coisa aparecendo na tela.");
 let separacao = prompt("Faça o teste, aperte ENTER: ");
 console.log();
 console.log("Seus status iniciais são:");
@@ -72,6 +72,7 @@ console.log();
 do {
     //ciclo da manhã
    ciclo1: do {
+       statusJogador.dia=0
        statusJogador.vit=5
        statusJogador.fadiga=0
     console.log("Fase 1: O incrível Dragão.");
@@ -128,6 +129,15 @@ do {
             statusJogador.diafunction();
             break ciclo1;
         }
+        if(statusJogador.dex==3 || statusJogador.dex>3){
+            statusJogador.vit=5
+            console.log();
+            console.log("A morte do dragão acabou regenerando a sua vida por completo.");
+            console.log("Vitalidade recuperada!");
+            console.log(`Vitalidade: ${statusJogador.vit}`);
+            statusJogador.diafunction();
+            break ciclo1
+        }
         const aleatorio1 = functionAleatoria();
         if(aleatorio1==0){
             statusJogador.vit=5
@@ -154,7 +164,7 @@ do {
         }
     }else if(decisao2==1){
         console.log();
-        console.log("O dragão acaba limpando o dente com a pequena Évy (não da para encher a barriga com uma garota que tem menos de 1,60, terá que reiniciar a fase.");
+        console.log("O dragão acaba limpando o dente com a pequena Évy (não da para encher a barriga com uma garota que tem menos de 1,60), o ciclo será reiniciado.");
         statusJogador.vit=0
         console.log(`Vitalidade: ${statusJogador.vit}`);
         separacao = prompt("");
@@ -177,7 +187,7 @@ do {
         console.log("Enquanto estava andando, a Évy avistou um belo ser, parecia humano, mas tinha três pares de asas brancas, estava vestido com um longo manto branco, tão claro quanto a pele da Évy, tinha um cabelo longo, completamente liso, que ia até o meio das suas costas. A Évy decide pedir ajuda a criatura, ele diz ser um arcanjo chamado Luci, Évy explica o que aconteceu ao arcanjo, que olha para a garota como se soubesse de todos os seus pecados e segredos mais obscuros, fazendo a Évy sentir um arrepio na espinha, mas mesmo assim ele decide ajudar, entregando um colar de ametista para a mesma");
         let decisao3 = prompt("Deseja aceitar a ametista do arcanjo?(s/n): ").toLowerCase();
         while(decisao3!="s" && decisao3!="n"){
-            console.log("Responda apenas com 's' ou 'n'").toLowerCase();
+            console.log("Responda apenas com 's' ou 'n'");
             decisao3 = prompt("Deseja aceitar a ametista do arcanjo?(s/n): ").toLowerCase();
         }
         if(decisao3=="s"){
@@ -198,6 +208,11 @@ do {
             statusJogador.pacfunction();
             console.log();
             console.log("Ele revela ser um mutante metamorfo, um pouco menor que a nossa aventureira, ele tinha  a pele azul e os olhos cor da noite, ele ataca a Évy sem exitar, ");
+            separacao = prompt("");
+            if(statusJogador.dex == 3 ||statusJogador.dex >3){
+                console.log("Mas a mesma consegue desviar sem muito problema, apesar de problemática sempre gostou de artes marciais, o que deu a ela bastante agilidade e um corpo responsivo."); 
+                console.log();
+            }
             const aleatorio2 = functionAleatoria();
             if(aleatorio2==0){
                 console.log("Mas a mesma consegue desviar sem muito problema, apesar de problemática sempre gostou de artes marciais, o que deu a ela bastante agilidade e um corpo responsivo.");
@@ -208,33 +223,99 @@ do {
                 console.log(`Vitalidade: ${statusJogador.vit}`)
             }else if(aleatorio2==2){
                 console.log();
-                console.log("Ele consegue te pegar desprevinida, acertando um golpe fatal, vai ter que reiniciar a fase.")
+                console.log("Ele consegue te pegar desprevinida, acertando um golpe fatal, vai ter que repetir o ciclo.")
                 statusJogador.vit=0
                 console.log(`Vitalidade: ${statusJogador.vit}`)
+                separacao = prompt("");
                 break ciclo2;
             }
         }else{
             console.log();
             console.log("o velho revela ser um mutante metamorfo, um pouco menor que a nossa aventureira, ele tinha a pele azul e os olhos cor da noite, ele fica bastante irritado com a garota, por demonstrar tão pouca compaixão com o próximo, partindo para cima dela.");
+            separacao = prompt("");
+            if(statusJogador.dex == 3 ||statusJogador.dex >3){
+                console.log("Ela esquiva sem muito problema graças a seu corpo treinado, pois ela sempre gostou de artes marciais.")    
+                console.log();
+            }
             const aleatorio3 = functionAleatoria();
             if(aleatorio3==0){
                 console.log("Ela esquiva sem muito problema graças a seu corpo treinado, pois ela sempre gostou de artes marciais.")    
+                console.log();
             }else if(aleatorio3==1){
                 statusJogador.fadfunction();
                 console.log();
                 console.log("Ela consegue desviar, o metamorfo não está perto o suficiente para fazer algum mal porem, ele joga um dardo, com um veneno que deixa as pessoas mais letargicas.")
                 console.log(`Fadiga:      ${statusJogador.fadiga}`)
+                console.log();
             }else if(aleatorio3==2){
                 console.log();
                 console.log("observando que não tinha como pegar ela devido a distancia, decide jogar sua adaga na Évy, foi um ataque fatal, terá que repetir o ciclo.")
                 statusJogador.vit=0
                 console.log(`Vitalidade: ${statusJogador.vit}`);
+                separacao = prompt("");
+                break ciclo2;
+            }
+        }
+        console.log();
+        console.log("Deseja atacar o mutante, ou quer tentar conversar com ele?");
+        let decisao5 = +prompt("Digite 0 para atacar e 1 para conversar com ele: ");
+        while(decisao5!=0 && decisao5!=1){
+            console.log();
+            console.log("Responda apenas com 0 e 1.");
+            decisao5 = +prompt("Digite 0 para atacar e 1 para conversar com ele: ");
+        }
+        if(decisao5==0){
+            console.log();
+            console.log("Você conseguiu destruir a criatura sem nenhum problema.")
+            separacao = prompt("");
+            console.log("Um orbe azul sai de dentro dela, a Évy pega esse orbe, no qual contêm a historia desse mundo, nele podemos ver  um colossal dragão verde esmeralda duelando com um galo vermelho rubi por 10000 anos, não se sabia o por que daquele embate, apenas que no final eles estavam bastante debilitados e acabaram sendo separados por uma rachadura no espaço, o que lançou eles para longe.");
+            separacao = prompt("");
+            console.log("Évy mexeu no cadáver do mutante e encontrou uma chave, quando apertou a mesma, foi teleportada para uma cabana, com uma cama, que apesar de velha e suja, é o suficiente para nossa copia de Bruce Lee descansar.");
+            separacao = prompt("")
+            console.log("Deseja descansar ou continuar sua jornada?");
+            console.log();
+            let decisao5_1 = +prompt("Digite 0 para descansar e 1 para continuar a jornada: ");
+            while(decisao5_1!=0 && decisao5_1!=1){
+                console.log("Responda apenas com 0 ou 1.");
+                decisao5_1 = +prompt("Digite 0 para descansar e 1 para continuar a jornada: ")
+            }
+            if(decisao5_1==0){
+                statusJogador.fadiga=0
+                console.log("A Évy decide descansar um pouco, sproveitando para tentar assimilar o que está acontecendo.");
+                break ciclo2;
+            }else{
+                console.log("A Évy não quer perder tempo em um lugar como esse, prosseguindo sua jornada.")
+                statusJogador.diafunction();
+                break ciclo2
+            }
+        }else{
+            statusJogador.pacfunction();
+            console.log();
+            console.log("O mutante fica um pouco receoso no começo, mas decide explicar a ela um pouco sobre aquele mundo, ele conta que existem duas criaturas misticas, que são praticamente deuses sobre as outras criaturas, um colossal dragão verde esmeralda chamado Smaragd e um galo vermelho rubi chamado Bǎoshí, eles levaram milênios duelando um contra o outro, mas quando o embate estava perto de finalizar devido o estado de fragilidade dos dois naquele momento, algo aconteceu que os separou instantaneamente.");
+            separacao = prompt("")
+            console.log("A Évy fala do dragão que ela matou e o mutante começa a rir e fala que é impossível ela ter matado o  Smaragd, mas conta que mesmo que isso acontecesse, por ele ser uma criatura divina, ele renasce como se fosse uma fênix, valendo o mesmo para o Bǎoshí, complementa dizendo que essa já a terceira geração que luta, sempre vingando a morte da vida anterior, ele leva a Évy para sua cabana e deixa ela descansar na sua humilde casa.");
+            console.log();
+            console.log("Deseja descansar na cabana do metamorfo?")
+            console.log("Digite 0 se quiser descansar e 1 caso queira prosseguir na sua jornada:")
+            let decisao5_2 = +prompt("")
+            while(decisao5_2!=0 && decisao5_2!=1){
+                console.log();
+                console.log("Responda apenas com 0 ou 1.");
+                console.log("Digite 0 se quiser descansar e 1 caso queira prosseguir na sua jornada:");
+            }
+            if(decisao5_2==0){
+                statusJogador.fadiga=0
+                console.log("A Évy decide descansar um pouco, sproveitando para tentar assimilar o que está acontecendo.");
+                break ciclo2
+            }else{
+                console.log("A Évy não quer perder tempo em um lugar como esse, prosseguindo sua jornada.")
+                statusJogador.diafunction();
                 break ciclo2
             }
         }
-     }
+    }
      
-} while (statusJogador.dia==5);
+} while (statusJogador.vit==0);
 jogar = ""
 jogar = prompt("Deseja jogar novamente?(s/n): ").toLowerCase();
   while(jogar!="s" && jogar!="n"){
@@ -246,7 +327,7 @@ jogar = prompt("Deseja jogar novamente?(s/n): ").toLowerCase();
       continue;
   }else if(jogar=="n"){
     console.log()  
-    console.log("Tudo bem, muito obrigado.");
+    console.log("Tudo bem, espero que tenha se divertido :D");
       break;
   }
-} 
+}
