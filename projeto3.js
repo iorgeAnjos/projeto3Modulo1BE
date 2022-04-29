@@ -146,7 +146,7 @@ do {
             break ciclo1
         } else if(aleatorio1==2){
             console.log();
-            console.log("Você tem muita má sorte, o dragão acabou explodindo, levando A Évy junto na explosão, terá que repetir.");
+            console.log("Você tem muito azar, o dragão acabou explodindo, levando A Évy junto na explosão, terá que repetir.");
             statusJogador.vit=0;
             console.log(`Vitalidade: ${statusJogador.vit}`)
             separacao = prompt("");
@@ -168,7 +168,7 @@ do {
         console.log();
         separacao = prompt("");
         console.log("TARDE");
-        console.log("Depois de um tempo caminhando, pôde-se perceber que o tempo ficou um pouco mais frio, e o céu que tinha um tom de verde esmeralda, ficou levemente laranja, com o horizonte em um lindo azul violeta.");
+        console.log("Depois de um tempo caminhando, pôde-se perceber que o tempo ficou um pouco mais frio, e o céu que tinha um tom de verde esmeralda, ficou levemente laranja, com o horizonte em um lindo azul com tons de violeta.");
         separacao = prompt("");
         console.log();
         console.log("fase2: O anjo e o idoso:");
@@ -193,6 +193,44 @@ do {
         while(decisao4!="s" && decisao4!="n"){
             console.log("Responda apenas com 's' ou 'n'");
             decisao4 = prompt("Deseja ajudar o velho?(s/n): ").toLowerCase();
+        }
+        if(decisao4=="s"){
+            statusJogador.pacfunction();
+            console.log();
+            console.log("Ele revela ser um mutante metamorfo, um pouco menor que a nossa aventureira, ele tinha  a pele azul e os olhos cor da noite, ele ataca a Évy sem exitar, ");
+            const aleatorio2 = functionAleatoria();
+            if(aleatorio2==0){
+                console.log("Mas a mesma consegue desviar sem muito problema, apesar de problemática sempre gostou de artes marciais, o que deu a ela bastante agilidade e um corpo responsivo.");
+            }else if(aleatorio2==1){
+                statusJogador.vitfunction();
+                console.log();
+                console.log("Ela consegue desviar porém, acaba tropeçando, sendo acertada de raspão, perdendo um pouco de vida.")
+                console.log(`Vitalidade: ${statusJogador.vit}`)
+            }else if(aleatorio2==2){
+                console.log();
+                console.log("Ele consegue te pegar desprevinida, acertando um golpe fatal, vai ter que reiniciar a fase.")
+                statusJogador.vit=0
+                console.log(`Vitalidade: ${statusJogador.vit}`)
+                break ciclo2;
+            }
+        }else{
+            console.log();
+            console.log("o velho revela ser um mutante metamorfo, um pouco menor que a nossa aventureira, ele tinha a pele azul e os olhos cor da noite, ele fica bastante irritado com a garota, por demonstrar tão pouca compaixão com o próximo, partindo para cima dela.");
+            const aleatorio3 = functionAleatoria();
+            if(aleatorio3==0){
+                console.log("Ela esquiva sem muito problema graças a seu corpo treinado, pois ela sempre gostou de artes marciais.")    
+            }else if(aleatorio3==1){
+                statusJogador.fadfunction();
+                console.log();
+                console.log("Ela consegue desviar, o metamorfo não está perto o suficiente para fazer algum mal porem, ele joga um dardo, com um veneno que deixa as pessoas mais letargicas.")
+                console.log(`Fadiga:      ${statusJogador.fadiga}`)
+            }else if(aleatorio3==2){
+                console.log();
+                console.log("observando que não tinha como pegar ela devido a distancia, decide jogar sua adaga na Évy, foi um ataque fatal, terá que repetir o ciclo.")
+                statusJogador.vit=0
+                console.log(`Vitalidade: ${statusJogador.vit}`);
+                break ciclo2
+            }
         }
      }
      
