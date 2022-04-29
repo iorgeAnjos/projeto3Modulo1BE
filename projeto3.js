@@ -178,6 +178,7 @@ do {
         console.log();
         separacao = prompt("");
         console.log("TARDE");
+        console.log();
         console.log("Depois de um tempo caminhando, pôde-se perceber que o tempo ficou um pouco mais frio, e o céu que tinha um tom de verde esmeralda, ficou levemente laranja, com o horizonte em um lindo azul com tons de violeta.");
         separacao = prompt("");
         console.log();
@@ -282,6 +283,8 @@ do {
             if(decisao5_1==0){
                 statusJogador.fadiga=0
                 console.log("A Évy decide descansar um pouco, sproveitando para tentar assimilar o que está acontecendo.");
+                statusJogador.diafunction();
+                statusJogador.diafunction();
                 break ciclo2;
             }else{
                 console.log("A Évy não quer perder tempo em um lugar como esse, prosseguindo sua jornada.")
@@ -307,6 +310,8 @@ do {
                 statusJogador.fadiga=0
                 console.log();
                 console.log("A Évy decide descansar um pouco, sproveitando para tentar assimilar o que está acontecendo.");
+                statusJogador.diafunction();
+                statusJogador.diafunction();
                 break ciclo2
             }else{
                 console.log();
@@ -316,7 +321,17 @@ do {
             }
         }
     }
-     
+    ciclo2_5: while(statusJogador.dia==2){//Esse é um ciclo "secreto", acessado apenas para quem não quis dormir na cabana.
+        console.log();
+        console.log("Como nossa guerreira decidiu não ficar na cabana do mutante, acabou tendo que enfrentar um perigoso inimigo, porém, velho conhecido dela...a noite.");
+        separacao = prompt("")
+        console.log("NOITE")
+        console.log();
+        console.log("O céu estava escuro, não mais laranja, um intenso vermelho sangue pairava sobre as nuvens, estava tudo muito escuro, sendo iluminado apenas por uma leve penumbra escondida atrás de uma grande esfera negra, possivelmente a lua desse mundo estranho.");
+        separacao = prompt("")
+        console.log("O dia ainda não tinha acabado e ela já tinha presenciado muita coisa estranha, depois de andar por uns minutos, ela percebe um estranho peixe alado voando em direção a ela, parecia querer atacá-la");
+
+    }
 } while (statusJogador.vit==0);
 jogar = ""
 jogar = prompt("Deseja jogar novamente?(s/n): ").toLowerCase();
