@@ -74,7 +74,6 @@ do {
    ciclo1: do {
        statusJogador.dia=0
        statusJogador.vit=5
-       statusJogador.fadiga=0
     console.log("Fase 1: O incrível Dragão.");
     separacao = prompt("");
     console.log();
@@ -129,7 +128,7 @@ do {
             statusJogador.diafunction();
             break ciclo1;
         }
-        if(statusJogador.dex==3 || statusJogador.dex>3){
+        if(statusJogador.dex >= 3){
             statusJogador.vit=5
             console.log();
             console.log("A morte do dragão acabou regenerando a sua vida por completo.");
@@ -210,7 +209,7 @@ do {
             console.log();
             console.log("Ele revela ser um mutante metamorfo, um pouco menor que a nossa aventureira, ele tinha  a pele azul e os olhos cor da noite, ele ataca a Évy sem exitar, ");
             separacao = prompt("");
-            if(statusJogador.dex == 3 ||statusJogador.dex >3){
+            if(statusJogador.dex >= 3){
                 console.log("Mas a mesma consegue desviar sem muito problema, apesar de problemática sempre gostou de artes marciais, o que deu a ela bastante agilidade e um corpo responsivo."); 
                 console.log();
             }
@@ -234,7 +233,7 @@ do {
             console.log();
             console.log("o velho revela ser um mutante metamorfo, um pouco menor que a nossa aventureira, ele tinha a pele azul e os olhos cor da noite, ele fica bastante irritado com a garota, por demonstrar tão pouca compaixão com o próximo, partindo para cima dela.");
             separacao = prompt("");
-            if(statusJogador.dex == 3 ||statusJogador.dex >3){
+            if(statusJogador.dex >=3){
                 console.log("Ela esquiva sem muito problema graças a seu corpo treinado, pois ela sempre gostou de artes marciais.")    
                 console.log();
             }
@@ -266,8 +265,10 @@ do {
             decisao5 = +prompt("Digite 0 para atacar e 1 para conversar com ele: ");
         }
         if(decisao5==0){
+            statusJogador.fadfunction();
             console.log();
-            console.log("Você conseguiu destruir a criatura sem nenhum problema.")
+            console.log(`Fadiga:     ${statusJogador.fadiga}`);
+            console.log("Você conseguiu destruir a criatura sem nenhum problema.");
             separacao = prompt("");
             console.log("Um orbe azul sai de dentro dela, a Évy pega esse orbe, no qual contêm a historia desse mundo, nele podemos ver  um colossal dragão verde esmeralda duelando com um galo vermelho rubi por 10000 anos, não se sabia o por que daquele embate, apenas que no final eles estavam bastante debilitados e acabaram sendo separados por uma rachadura no espaço, o que lançou eles para longe.");
             separacao = prompt("");
@@ -278,11 +279,15 @@ do {
             let decisao5_1 = +prompt("Digite 0 para descansar e 1 para continuar a jornada: ");
             while(decisao5_1!=0 && decisao5_1!=1){
                 console.log("Responda apenas com 0 ou 1.");
-                decisao5_1 = +prompt("Digite 0 para descansar e 1 para continuar a jornada: ")
+                decisao5_1 = +prompt("Digite 0 para descansar e 1 para continuar a jornada: ");
             }
             if(decisao5_1==0){
-                statusJogador.fadiga=0
                 console.log("A Évy decide descansar um pouco, sproveitando para tentar assimilar o que está acontecendo.");
+                for(let i=0;statusJogador.fadiga>i;i++){
+                    statusJogador.fadiga--;
+                    console.log();
+                    console.log("Évy realmente estava muito cansada...")
+                }
                 statusJogador.diafunction();
                 statusJogador.diafunction();
                 break ciclo2;
@@ -297,8 +302,9 @@ do {
             console.log("O mutante fica um pouco receoso no começo, mas decide explicar a ela um pouco sobre aquele mundo, ele conta que existem duas criaturas misticas, que são praticamente deuses sobre as outras criaturas, um colossal dragão verde esmeralda chamado Smaragd e um galo vermelho rubi chamado Bǎoshí, eles levaram milênios duelando um contra o outro, mas quando o embate estava perto de finalizar devido o estado de fragilidade dos dois naquele momento, algo aconteceu que os separou instantaneamente.");
             separacao = prompt("")
             console.log("A Évy fala do dragão que ela matou e o mutante começa a rir e fala que é impossível ela ter matado o  Smaragd, mas conta que mesmo que isso acontecesse, por ele ser uma criatura divina, ele renasce como se fosse uma fênix, valendo o mesmo para o Bǎoshí, complementa dizendo que essa já a terceira geração que luta, sempre vingando a morte da vida anterior, ele leva a Évy para sua cabana e deixa ela descansar na sua humilde casa.");
+            console.log("Évy pergunta o nome do mutante e ele fala que não é importante, então decide chamar de gnomio (sim, GNOMIO).")
             console.log();
-            console.log("Deseja descansar na cabana do metamorfo?")
+            console.log("Deseja descansar na cabana do gnomio?")
             console.log("Digite 0 se quiser descansar e 1 caso queira prosseguir na sua jornada:")
             let decisao5_2 = +prompt("")
             while(decisao5_2!=0 && decisao5_2!=1){
@@ -307,9 +313,13 @@ do {
                 console.log("Digite 0 se quiser descansar e 1 caso queira prosseguir na sua jornada:");
             }
             if(decisao5_2==0){
-                statusJogador.fadiga=0
                 console.log();
                 console.log("A Évy decide descansar um pouco, sproveitando para tentar assimilar o que está acontecendo.");
+                for(let i=0;statusJogador.fadiga>i;i++){
+                    statusJogador.fadiga--;
+                    console.log();
+                    console.log("Évy realmente estava muito cansada...")
+                }
                 statusJogador.diafunction();
                 statusJogador.diafunction();
                 break ciclo2
@@ -330,7 +340,48 @@ do {
         console.log("O céu estava escuro, não mais laranja, um intenso vermelho sangue pairava sobre as nuvens, estava tudo muito escuro, sendo iluminado apenas por uma leve penumbra escondida atrás de uma grande esfera negra, possivelmente a lua desse mundo estranho.");
         separacao = prompt("")
         console.log("O dia ainda não tinha acabado e ela já tinha presenciado muita coisa estranha, depois de andar por uns minutos, ela percebe um estranho peixe alado voando em direção a ela, parecia querer atacá-la");
-
+        separacao = prompt("");
+        console.log("Deseja atacar o peixe?");
+        let decisao6 = +prompt("0 para atacar, 1 para não atacar: ");
+        while(decisao6!=0 && decisao6!=1){
+            console.log("Responda apenas com 0 ou 1.");
+            decisao6 = +prompt("0 para atacar, 1 para não atacar: ");
+        }
+        if(decisao6==0){
+            console.log();
+            console.log("A Évy pensa em usar seu arco, mas não quer obliterar o peixe, pegando a sua .40 e atirando nas asas do peixe, já tem tempo desde que ela comeu peixe, mas ainda está em duvida...");
+            separacao = prompt("");
+            console.log("Você deseja comer o peixe?");
+            let decisao6_1 = +prompt("0 para comer e 1 para não comer: ");
+            while(decisao6_1!=0 && decisao6_1!=1){
+                console.log("Responda apenas com 0 ou 1.");
+                decisao6_1 = +prompt("0 para comer e 1 para não comer: ");
+            }   
+            if(decisao6_1==0){
+                console.log();
+                const aleatorio4 = functionAleatoria();
+                if(aleatorio4==0){
+                    statusJogador.fadiga--
+                    statusJogador.dexfunction();
+                    console.log("Ela come o peixe inteiro, incluindo as asas, recuperando um pouco da sua energia e aumentando sua destreza");
+                    console.log(`Fadiga:     ${statusJogador.fadiga}\nDestreza:   ${statusJogador.dex}`)
+                }else if(aleatorio4==1){
+                    statusJogador.fadiga--
+                    console.log("Ela tem um pouco de nojo, come parte do peixe, o suficiente para recuperar suas forças");
+                    console.log(`Fadiga:     ${statusJogador.fadiga}`)
+                }else if(aleatorio4==2){
+                    console.log("Ela se engasga com a espinha do peixe e morre.");
+                    statusJogador.vit=0
+                    console.log(`Vitalidade: ${statusJogador.vit}`)
+                }
+            }else{
+                statusJogador.pacfunction();
+                 console.log("Ela ficou com pena do peixe e jogou ele em um lago...mal sabia ela que peixe alado não respira na agua...");
+            }
+        }else{
+            console.log();
+            console.log("A Évy se abaixa e o peixe passa direto.");
+        }
     }
 } while (statusJogador.vit==0);
 jogar = ""
@@ -343,7 +394,7 @@ jogar = prompt("Deseja jogar novamente?(s/n): ").toLowerCase();
     if(jogar=="s"){
       continue;
   }else if(jogar=="n"){
-    console.log()  
+    console.log();
     console.log("Tudo bem, espero que tenha se divertido :D");
       break;
   }
