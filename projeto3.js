@@ -181,7 +181,7 @@ do {
         console.log("Depois de um tempo caminhando, pôde-se perceber que o tempo ficou um pouco mais frio, e o céu que tinha um tom de verde esmeralda, ficou levemente laranja, com o horizonte em um lindo azul com tons de violeta.");
         separacao = prompt("");
         console.log();
-        console.log("fase2: O anjo e o idoso:");
+        console.log("fase 2: O anjo e o idoso:");
         separacao = prompt("");
         console.log();
         console.log("Enquanto estava andando, a Évy avistou um belo ser, parecia humano, mas tinha três pares de asas brancas, estava vestido com um longo manto branco, tão claro quanto a pele da Évy, tinha um cabelo longo, completamente liso, que ia até o meio das suas costas. A Évy decide pedir ajuda a criatura, ele diz ser um arcanjo chamado Luci, Évy explica o que aconteceu ao arcanjo, que olha para a garota como se soubesse de todos os seus pecados e segredos mais obscuros, fazendo a Évy sentir um arrepio na espinha, mas mesmo assim ele decide ajudar, entregando um colar de ametista para a mesma");
@@ -305,10 +305,12 @@ do {
             }
             if(decisao5_2==0){
                 statusJogador.fadiga=0
+                console.log();
                 console.log("A Évy decide descansar um pouco, sproveitando para tentar assimilar o que está acontecendo.");
                 break ciclo2
             }else{
-                console.log("A Évy não quer perder tempo em um lugar como esse, prosseguindo sua jornada.")
+                console.log();
+                console.log("A Évy não quer perder tempo em um lugar como esse, prosseguindo sua jornada.");
                 statusJogador.diafunction();
                 break ciclo2
             }
