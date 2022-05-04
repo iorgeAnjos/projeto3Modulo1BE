@@ -50,6 +50,10 @@ const statusJogador = {
     pacfunction: function(){
         return this.pacifico++
     },
+    endgame : 0,
+    endfunction: function(){
+        return this.endgame++
+    },
 };
 const functionAleatoria = ()=>{
 const random = [];
@@ -72,6 +76,25 @@ console.log();
 do {
     //ciclo da manhã
    ciclo1: do {
+       while(statusJogador.dia==0 && statusJogador.endgame==1){
+           console.log();
+           console.log("MANHÃ")
+           separacao = prompt("");
+           console.log("Quando ela acordou já era manhã, ela continua andando, até que encontra algo que pareça uma cidade, uma civilização de monstros. Ela entra, um pouco receosa, mas é o que tem para fazer, chegando lá ela encontra um galo de rubi andando no centro da cidade, acaba lembrando da historia e decide conversar com ele sobre sua situação.");
+           separacao = prompt("");
+           console.log();
+           console.log("Ele fica surpreso ao saber que ela derrotou o dragão, mas acredita, afinal foi uma luta e tanto, ele fala que tanto ele quanto o dragão, tem o poder necessário para retirar ela de lá, que talvez se ela fosse um pouco paciente o Smaragd teria parado para ouvir ela, ela fala que basta um simples estralar de dedos que ela retorna.");
+           console.log("Deseja retornar ao seu mundo?");
+           let decisao7 = +prompt("0 p/ voltar e 1 p/ ficar.");
+           while(decisao7!=0 && decisao7!=1){
+               console.log();
+               console.log("Responda apenas com 0 ou 1.");
+               decisao7 = +prompt("0 p/ voltar e 1 p/ ficar.");
+           }
+           if(decisao7==0 && statusJogador.sanatas==1){
+               
+           }
+       }
        statusJogador.dia=0
        statusJogador.vit=5
     console.log("Fase 1: O incrível Dragão.");
@@ -79,7 +102,7 @@ do {
     console.log();
     console.log("MANHÃ");
     console.log();
-    console.log("Enquanto a Évy estava andando pela floresta, de repente pôde-se ouvir um ensurdecedor bater de asas, um dragão verde esmeralda acabava de pousar na frente da garota, fazendo tremer todo o terreno devido o seu tamanho colossal, ele estava bastante debilitado, com partes do seu corpo destroçadas e algumas regiões até mesmo necrosadas, como se tivesse acabado de sair de uma briga.");
+    console.log("Enquanto a Évy estava andando pela floresta, de repente pôde-se ouvir um ensurdecedor rugido, um dragão verde esmeralda acabava de pousar na frente da garota, fazendo tremer todo o terreno devido o seu tamanho colossal, ele estava bastante debilitado, com partes do seu corpo destroçadas e algumas regiões até mesmo necrosadas, como se tivesse acabado de sair de uma briga.");
     console.log("Ele faz menção de atacar a Évy,");
     console.log();
     console.log("Você está portando uma Glock. 40, deseja atacar o dragão ou fugir?");
@@ -166,8 +189,7 @@ do {
         console.log("O dragão acaba limpando o dente com a pequena Évy (não da para encher a barriga com uma garota que tem menos de 1,60), o ciclo será reiniciado.");
         statusJogador.vit=0
         console.log(`Vitalidade: ${statusJogador.vit}`);
-        separacao = prompt("");
-        
+        separacao = prompt("");    
     }
     
    } while (statusJogador.vit == 0);
@@ -288,8 +310,8 @@ do {
                     console.log();
                     console.log("Évy realmente estava muito cansada...")
                 }
-                statusJogador.diafunction();
-                statusJogador.diafunction();
+                statusJogador.dia = 0
+                statusJogador.endfunction();
                 break ciclo2;
             }else{
                 console.log("A Évy não quer perder tempo em um lugar como esse, prosseguindo sua jornada.")
@@ -320,8 +342,8 @@ do {
                     console.log();
                     console.log("Évy realmente estava muito cansada...")
                 }
-                statusJogador.diafunction();
-                statusJogador.diafunction();
+                statusJogador.dia = 0
+                statusJogador.endfunction();
                 break ciclo2
             }else{
                 console.log();
@@ -334,9 +356,10 @@ do {
     ciclo2_5: while(statusJogador.dia==2){//Esse é um ciclo "secreto", acessado apenas para quem não quis dormir na cabana.
         console.log();
         console.log("Como nossa guerreira decidiu não ficar na cabana do mutante, acabou tendo que enfrentar um perigoso inimigo, porém, velho conhecido dela...a noite.");
-        separacao = prompt("")
-        console.log("NOITE")
+        separacao = prompt("");
+        console.log("Fase 2.5: A PENUMBRA DO ANOITECER!!");
         console.log();
+        console.log("NOITE");
         console.log("O céu estava escuro, não mais laranja, um intenso vermelho sangue pairava sobre as nuvens, estava tudo muito escuro, sendo iluminado apenas por uma leve penumbra escondida atrás de uma grande esfera negra, possivelmente a lua desse mundo estranho.");
         separacao = prompt("")
         console.log("O dia ainda não tinha acabado e ela já tinha presenciado muita coisa estranha, depois de andar por uns minutos, ela percebe um estranho peixe alado voando em direção a ela, parecia querer atacá-la");
@@ -382,8 +405,35 @@ do {
             console.log();
             console.log("A Évy se abaixa e o peixe passa direto.");
         }
+        separacao = prompt("")
+        console.log();
+        console.log("Ela continua andando em direção ao desconhecido, nisso acaba sendo emboscada por seres parecidos com o que ela conhecia como goblins que apareciam nos joguinhos de RPG que costumava jogar.");
+        console.log();
+        console.log("Deseja atacar ou tentar fugir?");
+        let decisao6_2 = +prompt("0 p/ atacar e 1 p/ fugir: ");
+        while(decisao6_2!=0 && decisao6_2!=1){
+            console.log("Responda apenas com 0 ou 1.");
+            decisao6_2 = +prompt("0 p/ atacar e 1 p/ fugir: ");
+        }
+        if(decisao6_2==0){
+            console.log("A Évy decidiu atacar os 'goblins', mas sem muita efetividade pq eles são muitos. ");
+            console.log("Mas de repente, apareceu um jovem Orc e trucida facilmente todos os 'goblins', fala para nossa aventureira continuar sua jornada e que decidiu ajudar pq gostou do cabelo dela.");
+        }else{
+            console.log("Ela decide fugir, os 'goblins' estavam quase alcançando, mas de repente, apareceu um jovem Orc e trucida facilmente todos os 'goblins', fala para nossa aventureira continuar sua jornada e que decidiu ajudar pq gostou do cabelo dela.")
+        }
+        separacao = prompt("");
+        console.log();
+        console.log("Ela se encontra muito cansada e decide dormir ali mesmo.");
+        for(let i=0;statusJogador.fadiga>i;i++){
+            statusJogador.fadiga--;
+            console.log();
+            console.log("Évy realmente estava muito cansada...")
+        }
+        statusJogador.dia = 0
+        statusJogador.endfunction();
+        break ciclo2_5
     }
-} while (statusJogador.vit==0);
+} while (statusJogador.vit==0 || statusJogador.endgame==1);
 jogar = ""
 jogar = prompt("Deseja jogar novamente?(s/n): ").toLowerCase();
   while(jogar!="s" && jogar!="n"){
