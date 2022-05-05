@@ -65,6 +65,7 @@ const randomPC = Math.floor(Math.random()*3);
 random.push(randomPC);
 return random
 };
+console.log();
 console.log("As suas decisões podem impactar o destino dos mundos e a vida das pessoas a sua volta, então muito cuidado!!");
 console.log();
 console.log("Para não ficar confuso decidi separar a historinha a seguir utilizando o comando do enter, para que, você que está jogando não fique confuso com tanta coisa aparecendo na tela.");
@@ -89,6 +90,7 @@ do {
            console.log();
            console.log("Ele fica surpreso ao saber que ela derrotou o dragão, mas acredita, afinal foi uma luta e tanto, ele fala que tanto ele quanto o dragão, tem o poder necessário para retirar ela de lá, que talvez se ela fosse um pouco paciente o Smaragd teria parado para ouvir ela, ela fala que basta um simples estralar de dedos que ela retorna.");
            console.log("Deseja retornar ao seu mundo?");
+           console.log();
            let decisao7 = +prompt("Aperte 0 p/ voltar e 1 p/ ficar: ");
            while(decisao7!=0 && decisao7!=1){
                console.log();
@@ -105,7 +107,21 @@ do {
                console.log("Infelizmente você não teve um final muito bom.");
                statusJogador.endfunction();
                break ciclo1
-           }else if(decisao7==0 && statusJogador.pacifico>=2){
+           }else if(decisao7==0 && statusJogador.pacifico>=2 && statusJogador.orc==1){
+            console.log();
+            console.log("O Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela olha para seu braço, tinha uma cicatriz, a mesma que foi causada pelo dragão quando a lançou, fazendo-a perceber que aquilo realmente aconteceu…");
+            separacao = prompt("");
+            console.log("Anos se passaram e e pequena Évy se tornou uma engenheira renomada, conhecida no mundo todo,  além de uma grande escritora, contando historias de um mundo estranho que ela chamou de LSD");
+            separacao = prompt("");
+            console.log();
+            console.log("Certo dia, enquanto fazia sua caminhada matinal, ela encontra um rapaz muito parecido com o Orc que a salvou naquele mundo estranho, ele a comprimenta como se já conhecesse a anos e os dois caminham juntos.");
+            separacao = prompt("");
+            console.log();
+            console.log("Você obteve uns dos melhores finais, meus parabens!");
+            statusJogador.endfunction();
+            break ciclo1
+            
+        }else if(decisao7==0 && statusJogador.pacifico>=2){
                console.log();
                console.log("O Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela olha para seu braço, tinha uma cicatriz, a mesma que foi causada pelo dragão quando a lançou, fazendo-a perceber que aquilo realmente aconteceu…");
                separacao = prompt("");
@@ -117,19 +133,6 @@ do {
                console.log("Você obteve uns dos melhores finais, meus parabens!");
                statusJogador.endfunction();
                break ciclo1
-           }else if(decisao7==0 && statusJogador.pacifico>=2 && statusJogador.orc==1){
-               console.log();
-               console.log("O Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela olha para seu braço, tinha uma cicatriz, a mesma que foi causada pelo dragão quando a lançou, fazendo-a perceber que aquilo realmente aconteceu…");
-               separacao = prompt("");
-               console.log("Anos se passaram e e pequena Évy se tornou uma engenheira renomada, conhecida no mundo todo,  além de uma grande escritora, contando historias de um mundo estranho que ela chamou de LSD");
-               separacao = prompt("");
-               console.log();
-               console.log("Certo dia, enquanto fazia sua caminhada matinal, ela encontra um rapaz muito parecido com o Orc que a salvou certa vez naquele mundo estranho, ele a comprimenta como se já conhecesse a anos e os dois caminham juntos.");
-               console.log();
-               console.log("Você obteve uns dos melhores finais, meus parabens!");
-               statusJogador.endfunction();
-               break ciclo1
-               
            }else if(decisao7==0 && statusJogador.orc==1){
                console.log();
                console.log(" Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela está prestes a entrar no carro, ela vê um simbolo desenhado no seu pulso, era um arco dourado, fazendo-a perceber que aquilo realmente aconteceu.");
@@ -140,12 +143,12 @@ do {
                console.log();
                console.log("Certa vez durante sua folga, ela foi em um barzinho perto da sua casa, foi quando se aproximou um rapaz estranho e desengonçado, que se sentou perto dela e começou a tentar puxar assunto com a mesma.");
                separacao = prompt("");
-               console.log("A tenente no começo achou ele bem suspeito, mas depois de um tempo percebeu algo nele, o rosto era identico ao Orc que um dia salvou ela naquele mundo estranho.");
+               console.log("A tenente no começou a achar ele bem suspeito, mas depois de um tempo percebeu algo nele, o rosto era identico ao Orc que um dia salvou ela naquele mundo estranho.");
                separacao = prompt("");
                console.log();
-               console.log("Ela pergunta o nome do rapaz e ele responde dizendo que pode chamar ele de Angel, os dois dão uma gargalhada forte.");
+               console.log("Ela pergunta o nome do rapaz e ele responde dizendo que pode chamar ele de Angels, os dois dão uma gargalhada forte.");
+               separacao = prompt("");
                console.log();
-               console.log("Você obteve uns dos melhores finais, meus parabens!");
                console.log("Você obteve uns dos melhores finais, meus parabens!");
                statusJogador.endfunction();
                break ciclo1
@@ -156,9 +159,12 @@ do {
             console.log();
             console.log("Anos se passaram e nossa guerreira rubra prestou o concurso para a PMBA, anos mais tarde entrou no BOPE, sendo uma das PFEM mais reconhecidas e temidas do mundo, sendo convidada para treinar diversas outras forças em todo o planeta.");
             separacao = prompt("");
+            console.log("Certa vez durante sua folga, ela foi em um barzinho perto da sua casa, foi quando se aproximou um rapaz estranho e desengonçado, que se sentou perto dela e começou a tentar puxar assunto com a mesma.");
+            separacao = prompt("");
             console.log("A tenente no começo achou ele bem suspeito, mas depois de um tempo conversando, ele mostrou uma tatuagem que ele tinha nas costas, era um dragão verde esmeralda lutando contra um galo de rubi. ")
             separacao = prompt("");
-            console.log("Ela pergunta o nome do rapaz e ele responde dizendo que pode chamar ele de Angel, os dois dão uma gargalhada forte.");
+            console.log("Ela pergunta o nome do rapaz e ele responde dizendo que pode chamar ele de Angels, os dois dão uma gargalhada forte.");
+            separacao = prompt("");
                console.log();
                console.log("Você obteve uns dos melhores finais, meus parabens!");
                statusJogador.endfunction();
@@ -168,10 +174,10 @@ do {
                console.log("Nossa aventureira decidiu ficar nesse mundo estranho, não da para entender, ela é uma garota tão estranha, acho que vem de outro mundo.");
                separacao = prompt("");
                console.log();
-               console.log("De repente a ametista começa a brilhar intensamente, formando um pequeno buraco negro, absorvendo tudo a sua volta, incluindo o galo Bǎoshí e a Évy, logo depois o buraco negro começou a mudar de forma, tendo a aparência humana de um demônio, como se fosse o próprio diabo, ele começou a voar e causar caos e destruição para todo o planeta levando o mundo a ruína.");
+               console.log("De repente a ametista começa a brilhar intensamente, formando um pequeno buraco negro, absorvendo tudo a sua volta, incluindo o galo Bǎoshí e a Évy, logo depois o buraco negro começou a mudar de forma, tendo a aparência de um demônio, como se fosse o próprio diabo, ele começou a voar e causar caos e destruição para todo o planeta levando o mundo a ruína.");
+               separacao = prompt("");
                console.log();
                console.log("Infelizmente você não teve um final muito bom.");
-               console.log("Você obteve uns dos melhores finais, meus parabens!");
                statusJogador.endfunction();
                break ciclo1
            }
@@ -297,6 +303,7 @@ do {
         }
         if(decisao3=="s"){
             statusJogador.sanfunction();
+            console.log();
             console.log("Sem consequencias...até o momento...");
         }
         console.log();
