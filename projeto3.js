@@ -60,7 +60,7 @@ const statusJogador = {
     },
 };
 const functionAleatoria = ()=>{
-const random = [];
+const random = [];//ARRAY
 const randomPC = Math.floor(Math.random()*3);
 random.push(randomPC);
 return random
@@ -104,6 +104,8 @@ do {
                console.log();
                console.log("O colar se desprende do seu pescoço, invocando um ser maligno que parecia ser o próprio diabo em pessoa, ele começou a voar e causar caos e destruição para todo o planeta, levando o mundo a ruina.");
                console.log();
+               separacao = prompt("");
+               console.log();
                console.log("Infelizmente você não teve um final muito bom.");
                statusJogador.endfunction();
                break ciclo1
@@ -117,7 +119,7 @@ do {
             console.log("Certo dia, enquanto fazia sua caminhada matinal, ela encontra um rapaz muito parecido com o Orc que a salvou naquele mundo estranho, ele a comprimenta como se já conhecesse a anos e os dois caminham juntos.");
             separacao = prompt("");
             console.log();
-            console.log("Você obteve uns dos melhores finais, meus parabens!");
+            console.log("Você obteve um final pacifico.");
             statusJogador.endfunction();
             break ciclo1
             
@@ -130,7 +132,7 @@ do {
                console.log();
                console.log("Toda essa experiencia muita louca não mudou nossa garota, pelo contrario, só fortaleceu aquilo que já era forte, apesar dos pesares, é cada detalhe, por menor que seja, que faz ela ser uma garota perfeita. ")
                console.log();
-               console.log("Você obteve uns dos melhores finais, meus parabens!");
+               console.log("Você obteve um final pacifico.");
                statusJogador.endfunction();
                break ciclo1
            }else if(decisao7==0 && statusJogador.orc==1){
@@ -178,6 +180,74 @@ do {
                separacao = prompt("");
                console.log();
                console.log("Infelizmente você não teve um final muito bom.");
+               statusJogador.endfunction();
+               break ciclo1
+           }else if(decisao7==1 && statusJogador.pacifico>=2 && statusJogador.orc==1){
+               console.log();
+               console.log("Nossa aventureira decidiu ficar nesse mundo estranho, não da para entender, ela é uma garota tão estranha, acho que vem de outro mundo.");
+               separacao = prompt("");
+               console.log();
+               console.log("Anos se passaram, ela se tornou a principal conselheira dos reis daquele mundo, promovendo a paz entre os reinos locais.");
+               separacao = prompt("");
+               console.log();
+               console.log("Durante suas viagens pela paz, ela acabou encontrando o Orc que um dia salvou a vida dela, falando que ele foi como um anjo na vida dela, ele dá uma risada, respondendo que ele pode ser tudo, menos um anjo.");
+               separacao = prompt("");
+               console.log();
+               console.log("Você obteve um final pacifico.");
+               statusJogador.endfunction();
+               break ciclo1
+           }else if(decisao7==1 && statusJogador.pacifico>=2){
+               console.log();
+               console.log("Nossa aventureira decidiu ficar nesse mundo estranho, não da para entender, ela é uma garota tão estranha, acho que vem de outro mundo.");
+               separacao = prompt("");
+               console.log();
+               console.log("Anos se passaram, ela se tornou a principal conselheira dos reis daquele mundo, promovendo a paz entre os reinos locais.");
+               separacao = prompt("");
+               console.log();
+               console.log("O maior desafio dela com toda certeza, foi acalmar os seres celestiais, mas com a ajuda de um guerreiro Orc, ela conseguiu convencê-los a lutar em um deserto afastado dos vilarejos.");
+               separacao = prompt("");
+               console.log();
+               console.log("Apesar da aparência um pouco bizarra, dar cor vermelha do seu corpo e do chifre no meio da sua testa, ele conseguia ser mais humano do que qualquer um que ela conheceu durante sua vida na Terra");
+               separacao = prompt("");
+               console.log();
+               console.log("Você obteve um final pacifico.")
+               statusJogador.endfunction();
+               break ciclo1
+           }else if(decisao7==1 && statusJogador.orc==1){
+               console.log();
+               console.log("Nossa aventureira decidiu ficar nesse mundo estranho, não da para entender, ela é uma garota tão estranha, acho que vem de outro mundo.");
+               separacao = prompt("");
+               console.log();
+               console.log("Ela recebeu um treinamento especial de Bǎoshí, se tornando uma guerreira completa na utilização de múltiplas armas e conhecimentos sobre o mundo que ela estava.");
+               separacao = prompt("");
+               console.log();
+               console.log("Anos se passaram e ela se tornou chefe dos mercenários, aceitando qualquer missão que ela achasse interessante, não pelo dinheiro, mas porque ela gosta de uma boa ação.");
+               separacao = prompt("");
+               console.log();
+               console.log("Certa vez quando estava organizando uma equipe para fazer uma patrulha em uma caverna, ela avistou um rosto familiar, era o Orc que um dia salvou a vida dela quando ela chegou nesse mundo estranho, ela agradece pela ajuda que ele deu naquele dia, e pergunta o nome do mesmo, ele fala que pode chamar ele de Bil, o destruidor.");
+               separacao = prompt("");
+               console.log();
+               console.log("Você obteve uns dos melhores finais, meus parabens!");
+               statusJogador.endfunction();
+               break ciclo1
+           }else{
+               console.log();
+               console.log("Nossa aventureira decidiu ficar nesse mundo estranho, não da para entender, ela é uma garota tão estranha, acho que vem de outro mundo.");
+               separacao = prompt("");
+               console.log();
+               console.log("Ela recebeu um treinamento especial de Bǎoshí, se tornando uma guerreira completa na utilização de múltiplas armas e conhecimentos sobre o mundo que ela estava.");
+               separacao = prompt("");
+               console.log();
+               console.log("Anos se passaram e ela se tornou chefe dos mercenários, aceitando qualquer missão que ela achasse interessante, não pelo dinheiro, mas porque ela gosta de uma boa ação.");
+               separacao = prompt("");
+               console.log();
+               console.log("Em uma das suas patrulhas em uma caverna obscura, sua equipe foi emboscada por uma horda de cobras fumantes que sempre voltava a vida independente de quantas vezes fossem derrotadas, se recusando a se render, lutando por um proposito de orgulho e desejo.");
+               separacao = prompt("");
+               console.log();
+               console.log("Estando sem alternativas, a chefe Évy da a ordem para bater em retirada junto com sua tropa, era praticamente uma missão impossível, pois apesar de poucas, as cobras nunca se cansavam, ou elas eram muito boas, ou muito loucas, até que um Orc vermelho que estava na equipe decide servir como isca, para que todos possam ver o amanhecer novamente.");
+               separacao = prompt("");
+               console.log();
+               console.log("Você teve um final dramático!");
                statusJogador.endfunction();
                break ciclo1
            }
@@ -296,6 +366,7 @@ do {
         separacao = prompt("");
         console.log();
         console.log("Enquanto estava andando, a Évy avistou um belo ser, parecia humano, mas tinha três pares de asas brancas, estava vestido com um longo manto branco, tão claro quanto a pele da Évy, tinha um cabelo longo, completamente liso, que ia até o meio das suas costas. A Évy decide pedir ajuda a criatura, ele diz ser um arcanjo chamado Luci, Évy explica o que aconteceu ao arcanjo, que olha para a garota como se soubesse de todos os seus pecados e segredos mais obscuros, fazendo a Évy sentir um arrepio na espinha, mas mesmo assim ele decide ajudar, entregando um colar de ametista para a mesma");
+        console.log();
         let decisao3 = prompt("Deseja aceitar a ametista do arcanjo?(s/n): ").toLowerCase();
         while(decisao3!="s" && decisao3!="n"){
             console.log("Responda apenas com 's' ou 'n'");
@@ -467,9 +538,11 @@ do {
             console.log("A Évy pensa em usar seu arco, mas não quer obliterar o peixe, pegando a sua .40 e atirando nas asas do peixe, já tem tempo desde que ela comeu peixe, mas ainda está em duvida...");
             separacao = prompt("");
             console.log("Você deseja comer o peixe?");
+            console.log();
             let decisao6_1 = +prompt("0 para comer e 1 para não comer: ");
             while(decisao6_1!=0 && decisao6_1!=1){
                 console.log("Responda apenas com 0 ou 1.");
+                console.log();
                 decisao6_1 = +prompt("0 para comer e 1 para não comer: ");
             }   
             if(decisao6_1==0){
@@ -478,19 +551,26 @@ do {
                 if(aleatorio4==0){
                     statusJogador.fadiga--
                     statusJogador.dexfunction();
+                    console.log();
                     console.log("Ela come o peixe inteiro, incluindo as asas, recuperando um pouco da sua energia e aumentando sua destreza");
+                    console.log();
                     console.log(`Fadiga:     ${statusJogador.fadiga}\nDestreza:   ${statusJogador.dex}`)
                 }else if(aleatorio4==1){
                     statusJogador.fadiga--
+                    console.log();
                     console.log("Ela tem um pouco de nojo, come parte do peixe, o suficiente para recuperar suas forças");
+                    console.log();
                     console.log(`Fadiga:     ${statusJogador.fadiga}`)
                 }else if(aleatorio4==2){
+                    console.log();
                     console.log("Ela se engasga com a espinha do peixe e morre.");
                     statusJogador.vit=0
+                    console.log();
                     console.log(`Vitalidade: ${statusJogador.vit}`)
                 }
             }else{
                 statusJogador.pacfunction();
+                console.log();
                  console.log("Ela ficou com pena do peixe e jogou ele em um lago...mal sabia ela que peixe alado não respira na agua...");
             }
         }else{
@@ -538,7 +618,6 @@ jogar = prompt("Deseja jogar novamente?(s/n): ").toLowerCase();
     jogar = prompt("Deseja jogar novamente?(s/n): ").toLowerCase();
   }
     if(jogar=="s"){
-        console.clear();
       continue;
   }else if(jogar=="n"){
     console.log();
