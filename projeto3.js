@@ -301,15 +301,6 @@ do {
         console.log(`Sua destreza agora é ${statusJogador.dex}`)
         separacao = prompt("");
         console.log();
-        if(statusJogador.dex==3){
-            statusJogador.vit=5
-            console.log();
-            console.log("A morte do dragão acabou regenerando a sua vida por completo.");
-            console.log("Vitalidade recuperada!");
-            console.log(`Vitalidade: ${statusJogador.vit}`);
-            statusJogador.diafunction();
-            break ciclo1;
-        }
         if(statusJogador.dex >= 3){
             statusJogador.vit=5
             console.log();
