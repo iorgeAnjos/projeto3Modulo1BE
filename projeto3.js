@@ -256,6 +256,7 @@ do {
        statusJogador.vit=5
        statusJogador.sanatas=0
        statusJogador.pacifico=0
+    console.log();
     console.log("Fase 1: O incrível Dragão.");
     separacao = prompt("");
     console.log();
@@ -558,6 +559,7 @@ do {
                     statusJogador.vit=0
                     console.log();
                     console.log(`Vitalidade: ${statusJogador.vit}`)
+                    break ciclo2_5
                 }
             }else{
                 statusJogador.pacfunction();
