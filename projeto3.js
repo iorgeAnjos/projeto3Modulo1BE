@@ -28,35 +28,35 @@ while(jogar=="s"){
 const statusJogador = {
     vit : 5,
     vitfunction: function(){
-       return this.vit--
+       return this.vit-- //Propiedade que altera o status do usuario.
     },
     dex : 0,
     dexfunction: function(){
-        return this.dex++
+        return this.dex++ //propiedade que altera o status do usuario.
     },
     fadiga: 0,
     fadfunction: function(){
-        return this.fadiga++
+        return this.fadiga++ //Propiedade que altera o status do usuario.
     },
     sanatas : 0,
     sanfunction: function(){
-        return this.sanatas++
+        return this.sanatas++ //Propiedade que altera o final da historia.
     },
     dia : 0,
     diafunction: function(){
-        return this.dia++
+        return this.dia++ //Propiedade que altera o ciclo da historia.
     },
     pacifico : 0,
     pacfunction: function(){
-        return this.pacifico++
+        return this.pacifico++ //Propiedade que altera o final da historia.
     },
     endgame : 0,
     endfunction: function(){
-        return this.endgame++
+        return this.endgame++ //Propiedade que determina o retorno para o primeiro ciclo, dando continuidade a historia.
     },
     orc : 0,
     orcfunction: function(){
-        return this.orc++
+        return this.orc++ //Propiedade que altera o final da historia.
     },
 };
 const functionAleatoria = ()=>{
@@ -65,11 +65,11 @@ const randomPC = Math.floor(Math.random()*3);
 random.push(randomPC);
 return random
 };
-console.log();
+console.log(); //Uma pequena introdução antes do jogo começar, explicando como ele funciona.
 console.log("As suas decisões podem impactar o destino dos mundos e a vida das pessoas a sua volta, então muito cuidado!!");
 console.log();
 console.log("Para não ficar confuso decidi separar a historinha a seguir utilizando o comando do enter, para que, você que está jogando não fique confuso com tanta coisa aparecendo na tela.");
-let separacao = prompt("Faça o teste, aperte ENTER: ");
+let separacao = prompt("Faça o teste, aperte ENTER: "); //Aqui é a variavel que eu criei para ir separando a historia do jogo.
 console.log();
 console.log("Seus status iniciais são:");
 console.log(`VITALIDADE: ${statusJogador.vit}\nDESTREZA:   ${statusJogador.dex}\nFADIGA:     ${statusJogador.fadiga}`);
@@ -81,14 +81,14 @@ console.log();
 do {
     //ciclo da manhã
    ciclo1: do {
-       while(statusJogador.dia==0 && statusJogador.endgame==1){
+       while(statusJogador.dia==0 && statusJogador.endgame==1){//Final do jogo.
            console.log();
            console.log("MANHÃ")
            separacao = prompt("");
            console.log("Quando ela acordou já era manhã, ela continua andando, até que encontra algo que pareça uma cidade, uma civilização de monstros. Ela entra, um pouco receosa, mas é o que tem para fazer, chegando lá ela encontra um galo de rubi andando no centro da cidade, acaba lembrando da historia e decide conversar com ele sobre sua situação.");
            separacao = prompt("");
            console.log();
-           console.log("Ele fica surpreso ao saber que ela derrotou o dragão, mas acredita, afinal foi uma luta e tanto, ele fala que tanto ele quanto o dragão, tem o poder necessário para retirar ela de lá, que talvez se ela fosse um pouco paciente o Smaragd teria parado para ouvir ela, ela fala que basta um simples estralar de dedos que ela retorna.");
+           console.log("Ele fica surpreso ao saber que ela derrotou o dragão, mas acredita, afinal foi uma luta e tanto, ele fala que tanto ele quanto o dragão, tem o poder necessário para retirar ela de lá, que talvez se ela fosse um pouco paciente o dragão Smaragd teria parado para ouvir ela, ela fala que basta um simples estralar de dedos que ela retorna.");
            console.log("Deseja retornar ao seu mundo?");
            console.log();
            let decisao7 = +prompt("Aperte 0 p/ voltar e 1 p/ ficar: ");
@@ -99,7 +99,7 @@ do {
            }
            if(decisao7==0 && statusJogador.sanatas==1){
                console.log();
-               console.log("O Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas de repente, algo começa a brilhar no seu pescoço, era um colar de ametista, o mesmo que o arcanjo deu a ela.");
+               console.log("O galo Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas de repente, algo começa a brilhar no seu pescoço, era um colar de ametista, o mesmo que o arcanjo deu a ela.");
                separacao = prompt("");
                console.log();
                console.log("O colar se desprende do seu pescoço, invocando um ser maligno que parecia ser o próprio diabo em pessoa, ele começou a voar e causar caos e destruição para todo o planeta, levando o mundo a ruina.");
@@ -111,7 +111,7 @@ do {
                break ciclo1
            }else if(decisao7==0 && statusJogador.pacifico>=2 && statusJogador.orc==1){
             console.log();
-            console.log("O Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela olha para seu braço, tinha uma cicatriz, a mesma que foi causada pelo dragão quando a lançou, fazendo-a perceber que aquilo realmente aconteceu…");
+            console.log("O galo Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela olha para seu braço, tinha uma cicatriz, a mesma que foi causada pelo dragão quando a lançou, fazendo-a perceber que aquilo realmente aconteceu…");
             separacao = prompt("");
             console.log("Anos se passaram e e pequena Évy se tornou uma engenheira renomada, conhecida no mundo todo,  além de uma grande escritora, contando historias de um mundo estranho que ela chamou de LSD");
             separacao = prompt("");
@@ -125,7 +125,7 @@ do {
             
         }else if(decisao7==0 && statusJogador.pacifico>=2){
                console.log();
-               console.log("O Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela olha para seu braço, tinha uma cicatriz, a mesma que foi causada pelo dragão quando a lançou, fazendo-a perceber que aquilo realmente aconteceu…");
+               console.log("O galo Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela olha para seu braço, tinha uma cicatriz, a mesma que foi causada pelo dragão quando a lançou, fazendo-a perceber que aquilo realmente aconteceu…");
                separacao = prompt("");
                console.log("Anos se passaram e e pequena Évy se tornou uma engenheira renomada, conhecida no mundo todo,  além de uma grande escritora, contando historias de um mundo estranho que ela chamou de LSD");
                separacao = prompt("");
@@ -137,7 +137,7 @@ do {
                break ciclo1
            }else if(decisao7==0 && statusJogador.orc==1){
                console.log();
-               console.log(" Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela está prestes a entrar no carro, ela vê um simbolo desenhado no seu pulso, era um arco dourado, fazendo-a perceber que aquilo realmente aconteceu.");
+               console.log("O galo Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela está prestes a entrar no carro, ela vê um simbolo desenhado no seu pulso, era um arco dourado, fazendo-a perceber que aquilo realmente aconteceu.");
                separacao = prompt("");
                console.log();
                console.log("Anos se passaram e nossa guerreira rubra prestou o concurso para a PMBA, anos mais tarde entrou no BOPE, sendo uma das PFEM mais reconhecidas e temidas do mundo, sendo convidada para treinar diversas outras forças em todo o planeta.");
@@ -156,7 +156,7 @@ do {
                break ciclo1
            }else if(decisao7==0){
             console.log();
-            console.log(" Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela está prestes a entrar no carro, ela vê um simbolo desenhado no seu pulso, era um arco dourado, fazendo-a perceber que aquilo realmente aconteceu.");
+            console.log("O galo Bǎoshí abre as suas asas, fazendo nossa caçadora carmesim brilhar, aparecendo na porta da sua casa, momentos antes dela ir encher a cara, fazendo-a pensar que tudo aquilo foi um sonho, mas quando ela está prestes a entrar no carro, ela vê um simbolo desenhado no seu pulso, era um arco dourado, fazendo-a perceber que aquilo realmente aconteceu.");
             separacao = prompt("");
             console.log();
             console.log("Anos se passaram e nossa guerreira rubra prestou o concurso para a PMBA, anos mais tarde entrou no BOPE, sendo uma das PFEM mais reconhecidas e temidas do mundo, sendo convidada para treinar diversas outras forças em todo o planeta.");
@@ -218,7 +218,7 @@ do {
                console.log("Nossa aventureira decidiu ficar nesse mundo estranho, não da para entender, ela é uma garota tão estranha, acho que vem de outro mundo.");
                separacao = prompt("");
                console.log();
-               console.log("Ela recebeu um treinamento especial de Bǎoshí, se tornando uma guerreira completa na utilização de múltiplas armas e conhecimentos sobre o mundo que ela estava.");
+               console.log("Ela recebeu um treinamento especial do galo Bǎoshí, se tornando uma guerreira completa na utilização de múltiplas armas e conhecimentos sobre o mundo que ela estava.");
                separacao = prompt("");
                console.log();
                console.log("Anos se passaram e ela se tornou chefe dos mercenários, aceitando qualquer missão que ela achasse interessante, não pelo dinheiro, mas porque ela gosta de uma boa ação.");
@@ -235,7 +235,7 @@ do {
                console.log("Nossa aventureira decidiu ficar nesse mundo estranho, não da para entender, ela é uma garota tão estranha, acho que vem de outro mundo.");
                separacao = prompt("");
                console.log();
-               console.log("Ela recebeu um treinamento especial de Bǎoshí, se tornando uma guerreira completa na utilização de múltiplas armas e conhecimentos sobre o mundo que ela estava.");
+               console.log("Ela recebeu um treinamento especial do galo Bǎoshí, se tornando uma guerreira completa na utilização de múltiplas armas e conhecimentos sobre o mundo que ela estava.");
                separacao = prompt("");
                console.log();
                console.log("Anos se passaram e ela se tornou chefe dos mercenários, aceitando qualquer missão que ela achasse interessante, não pelo dinheiro, mas porque ela gosta de uma boa ação.");
@@ -252,7 +252,7 @@ do {
                break ciclo1
            }
        }
-       statusJogador.dia=0
+       statusJogador.dia=0 //Deixo os status predeterminados para que não acabe somando com o processo antigo, caso o usuario morra.
        statusJogador.vit=5
        statusJogador.sanatas=0
        statusJogador.pacifico=0
@@ -343,7 +343,7 @@ do {
         separacao = prompt("");    
     }
     
-   } while (statusJogador.vit == 0);
+   } while (statusJogador.vit == 0); //Aqui determina que, se a vida do usuario estiver igual a zero, o ciclo será reiniciado.
 
     //ciclo da tarde
      ciclo2: while(statusJogador.dia==1){
@@ -465,11 +465,11 @@ do {
                 }
                 statusJogador.dia = 0
                 statusJogador.endfunction();
-                break ciclo2;
+                break ciclo2; //Aqui, se o usuario decidir dormir, ele vou reiniciar o ciclo da manhã, dando continuidade a historia.
             }else{
                 console.log("A Évy não quer perder tempo em um lugar como esse, prosseguindo sua jornada.")
                 statusJogador.diafunction();
-                break ciclo2
+                break ciclo2 //Caso o usuario escolha continuar a jornada, vai continuar e iniciar o ciclo da noite.
             }
         }else{
             statusJogador.pacfunction();
@@ -506,7 +506,7 @@ do {
             }
         }
     }
-    ciclo2_5: while(statusJogador.dia==2){//Esse é um ciclo "secreto", acessado apenas para quem não quis dormir na cabana.
+    ciclo3: while(statusJogador.dia==2){//Esse é um ciclo "secreto", acessado apenas para quem não quis dormir na cabana.
         console.log();
         console.log("Como nossa guerreira decidiu não ficar na cabana do mutante, acabou tendo que enfrentar um perigoso inimigo, porém, velho conhecido dela...a noite.");
         separacao = prompt("");
@@ -559,7 +559,7 @@ do {
                     statusJogador.vit=0
                     console.log();
                     console.log(`Vitalidade: ${statusJogador.vit}`)
-                    break ciclo2_5
+                    break ciclo3
                 }
             }else{
                 statusJogador.pacfunction();
@@ -600,7 +600,7 @@ do {
         }
         statusJogador.dia = 0
         statusJogador.endfunction();
-        break ciclo2_5
+        break ciclo3
     }
 } while (statusJogador.vit==0 || statusJogador.endgame==1);
 jogar = ""
